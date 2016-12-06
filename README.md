@@ -26,7 +26,7 @@ v0.1 does about the same thing the previous Lisk Delegate Monitor did, but it is
 
 The functions should work fine, in future versions their performance will be improved. The UI have some bugs and not yet working functions (for example you can drag the info boxes, but they should snap in place, and stay there), and a few other small quirks.
 
-You can leave a comment in the Lisk forum thread.
+You can leave a comment in the Lisk forum thread. https://forum.lisk.io/viewtopic.php?f=49&t=1242
 
 *Donation address: 18090376249243533580L*
 
