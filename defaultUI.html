@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<head>
+<!--
+<script src="files/jquery.min.js"></script>
+<script src="files/jquery-ui.min.js"></script> 
+<link rel="stylesheet" href="files/jquery-ui.css">
+//-->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<style>
+
+div:blank {
+   display: none;
+}
+
+
+#container {
+border-style: solid;
+border-width: 1px;
+width:220px;
+
+}
+
+.smallcontainer {
+width: 100%;
+  border: solid 1px;
+   font: 14px "Ariel", sans-serif;
+
+}
+
+
+.title_bar {
+  background: #0071AB;
+ color: #F1EAF1;
+  width: 100%;
+}
+
+.contentbox {
+height-min: 30px;
+height-max: 100px;
+background: #23282E;
+color: #F1EAF1;
+cursor: default;
+padding: 6px;
+font-size: 12px;
+width:100%;
+line-height: 100%;
+word-spacing: 3px;
+height: auto;
+}
+
+.contentbox .line {
+width:100%;
+white-space: nowrap;
+}
+
+.contentbox .line > div {
+display: inline-block;
+margin-right:5px;
+}
+
+
+#peerbox .line div:nth-child(1) {
+width:50px;
+}
+
+#peerbox .line div:nth-child(2) {
+width:auto;
+}
+#peerbox .line div:nth-child(3) {
+width:16px;
+}
+
+
+#nodesbox .line div:nth-child(1) {
+width:50px;
+}
+
+#nodesbox .line div:nth-child(2) {
+width:60%;
+}
+#nodesbox .line div:nth-child(3) {
+background-color:grey;
+height:80%;
+}
+
+#delegatebox .line div:nth-child(1) {
+width:95px;
+}
+
+#delegatebox .line div:nth-child(2) {
+width:6px;
+}
+
+
+.nodeline {
+  white-space:nowrap;
+    display: block;
+		height: 1px;
+}
+
+.nodeline div {
+    white-space:nowrap;
+    display: inline-block;
+	padding-right: 5px;
+}
+</style>
+
+  
+
+ <script>
+  $(document).ready(function(){
+		$(".title_bar").click(function() {
+		  $(this).next().slideToggle(200);
+	});
+});
+</script>
+  
+
+<script>
+$( function() {
+$( ".smallcontainer" ).draggable({cursor: "move", axis: "y", handle: ".contentbox" });
+} );
+</script>
+
+  <script>
+  $( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
+</script>
+</head>
+
+<body>
+<div id="container">
+
+  
+
+	<div id="nodescontainer" class="smallcontainer">
+		<div id="nodestitle" class="title_bar">Your Nodes
+		</div>
+		<div id="nodesbox" class="contentbox">
+		<div class='line'><div class='cell'></div><div class='cell'></div><div class='cell'></div></div>
+	
+		Provide your node addresses in setting.ini<P>You can sort these boxes into different orders by dragging
+		</div>
+	</div>
+ 
+ 
+	<div id="Peerscontainer" class="smallcontainer">
+		<div id="peerstitle" class="title_bar">Height Consensus
+		</div>
+		<div id="peerbox" class="contentbox">
+		<div class='line'><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell'></div></div>
+		<div class='line'><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell'></div></div>
+		<div class='line'><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell'></div></div>
+		<div class='line'><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell'></div></div>
+		<div class='line'><div class='cell'></div><div class='cell'></div><div class='cell'></div><div class='cell'></div></div>
+		</div>
+	</div>
+
+	<div id="delegatescontainer" class="smallcontainer">
+		<div id="delegatestitle" class="title_bar">Delegate Info
+		</div>
+		<div id="delegatebox" class="contentbox">
+		<div class='line'><div class='cell'>Rank / Approval</div><div class='cell'></div><div class='cell' id='rank'></div>/<div class='cell'></div><div class='cell' id='approval'></div></div>
+		<div class='line'><div class='cell'>Productivity</div><div class='cell'></div><div class='cell' id='productivity'></div></div>
+		<div class='line'><div class='cell'>Forged / Missed</div><div class='cell'></div><div class='cell' id='forged'></div>/<div class='cell'></div><div class='cell' id='missed'></div></div>
+		<div class='line'><div class='cell'>Forged Amount</div><div class='cell'></div><div class='cell' id='forgedamount'></div></div>
+		
+		</div>
+	</div> 
+
+	<div id="eventcontainer" class="smallcontainer">
+		<div id="eventtitle" class="title_bar">Event Log
+		</div>
+		<div id="eventbox" class="contentbox">
+		Recent events and alerts
+		</div>
+	</div> 
+
+</div>
+ 
+
+ 
+
+ 
+
+</body>
+</html>
