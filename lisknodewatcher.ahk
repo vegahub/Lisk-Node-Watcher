@@ -3,6 +3,8 @@ Lisk Node Watcher
 	by Vega
 
 Version: v0.1   (2016.12.06)
+Version: v0.1.1   (2016.12.08)
+	- fix for Lisk 0.5.1 new sync API response
 
 You have to install AutoHotKey to run this script.
 You can find the latest version here: https://autohotkey.com
@@ -164,7 +166,7 @@ response := oHTTP.ResponseText(oHTTP.Send(oHTTP.Open("GET",nodeurl%a_index% "/ap
 if !response
 	continue
 FormatTime heightsdata_time,%a_now%,HH:mm:ss	
-RegExMatch(response,"{""success"":(.*?),""syncing"":(.*?),""blocks"":(.*?),""height"":(.*?)}",d)
+RegExMatch(response,"{""success"":(.*?),""syncing"":(.*?),""blocks"":(.*?),""height"":(.*?),""broadhash"":""(.*?)"",""consensus"":(.*?)}",d)
 ; later othen info than height can be added
 	
 nodeurl%a_index%_height := d4	
@@ -431,6 +433,7 @@ notification_style := "GC=asdasd TC=White MC=White"		; you can change the notifi
 FileAppend %defaultf%, settings.ini
 ;msgbox A default settings.ini was created. Please edit your preferences to the ini file and start the script again.`n`nPress OK to exit
 msgbox A default settings.ini was created. Edit the file and restart the script after.
+return
 
 
 
